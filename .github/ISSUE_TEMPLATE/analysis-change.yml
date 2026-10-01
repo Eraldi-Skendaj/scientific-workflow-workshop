@@ -1,0 +1,45 @@
+name: Analysis change
+description: Define a bounded synthetic analysis change for the workshop
+title: "[Analysis] "
+labels:
+  - workshop
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use synthetic data only. Do not include patient, customer, or proprietary information.
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What outcome is needed?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Relevant repository context
+      description: Which requirements, analysis files, references, or checks should guide the work?
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: What must remain unchanged or out of scope?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: How will a reviewer determine whether the proposal is ready for further validation?
+    validations:
+      required: true
+  - type: textarea
+    id: review
+    attributes:
+      label: Human review questions
+      description: What scientific, terminology, validation, or policy questions must remain visible?
+    validations:
+      required: true
