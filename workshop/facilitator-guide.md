@@ -1,22 +1,22 @@
 # Facilitator guide
 
-## Browser-first principle
+## Delivery model
 
-Run the workshop on GitHub.com. Do not require local Git, an IDE, language runtimes, extensions, or package installation.
+Keep Foundations browser-based. Run the advanced workshop in **VS Code Copilot Agent mode on a local checkout**, then use GitHub.com for human-created pull requests and review. Do not require a cloud coding agent, issue assignment to Copilot, or automatic agent-created pull requests.
+
+Local execution is not offline: prompts and repository context can still be sent to cloud AI services. Follow organization requirements for identity, models, extensions, context sharing, and tool approvals.
 
 ## Before the event
 
-1. Confirm attendees can view the public repository.
-2. Choose the write-enabled exercise path:
-   - grant standard GitHub accounts write access to the shared repository;
-   - have standard accounts create copies with **Use this template**; or
-   - provide an organization-owned copy inside an Enterprise Managed Users enterprise.
-3. Confirm GitHub Copilot cloud agent and GitHub Copilot code review are enabled in the write-enabled repository.
-4. Enable Issues, Actions, and pull requests.
-5. Confirm attendees can create branches, issues, and pull requests.
-6. Confirm the validation workflow can run.
-7. Create one completed backup pull request for each workshop.
-8. Prepare screenshots or a short recording for network contingencies.
+1. Treat [johnsont1693/scientific-workflow-workshop](https://github.com/johnsont1693/scientific-workflow-workshop) as the **private, read-only learner reference**. Confirm authorized read access before sharing it; do not promise anonymous access or write permission.
+2. Have an authorized administrator or facilitator stage separate writable work repositories in an approved organization. For Enterprise Managed Users, stage the copy internally; do not assume attendees can access the external reference. Confirm any required permission to redistribute the upstream material before copying; attribution alone is not a license.
+3. Confirm the approved identity and work-repository access for each pair, including branch creation, issues, pushes, and pull requests. Collect GitHub handles only to provision approved work-repository access; keep attendee details out of repository content. Never route blocked attendees through personal accounts or public forks.
+4. Verify VS Code with GitHub Copilot, Git, Python 3.10+, approved local workspace access, Copilot entitlement, Agent mode, and an approved model. Use approved installation channels; no Python packages are needed. Confirm a local Agent session works without delegating to a cloud service's coding-agent environment.
+5. Check whether Copilot pull-request code review is enabled and available in the work repository. If not, use the human review checklist. This is independent of VS Code Agent mode availability.
+6. Have the authorized administrator enable Issues, pull requests, and Actions where permitted. Confirm the existing workflow can run with approved actions/runners; do not relax organization controls. When Actions is unavailable, capture local test evidence and document the limitation without bypassing required gates.
+7. Run `python scripts/validate.py` using the available Python 3.10+ command. Confirm the baseline is severe-only with two records. SAS/R runtime checks require separately approved runtimes and are not performed by this validator.
+8. Prepare one human-created backup pull request per lab in the approved work repository, along with sanitized screenshots or a short recording. Keep the reference baseline unchanged.
+9. Assign an observer or pairing route when permissions, local tools, licensing, Agent mode, an approved model, or network access are unavailable. A prerecorded synthetic demonstration is the contingency, not an offline Copilot promise.
 
 ## Foundations reset
 
@@ -30,17 +30,30 @@ Before each delivery:
 
 Before each delivery:
 
-- confirm `workshop/cloud-agent-task.md` matches the baseline;
+- confirm `workshop/vscode-agent-task.md` matches the baseline;
 - confirm the current tests pass on `main`;
-- keep a completed cloud-agent pull request available in case live sessions do not finish;
-- confirm Copilot appears in the pull request Reviewers section.
+- keep a prepared human-created pull request available in case a local session does not finish;
+- confirm Copilot appears in the pull request Reviewers section where enabled, or prepare the human-review fallback;
+- verify a human can inspect terminal/tool approvals, review diffs, run tests, and publish without agent-managed Git actions.
+
+## Prepared demonstration patches
+
+`workshop/demo-foundations-change.patch` and `workshop/demo-copilot-change.patch` are existing facilitator fixtures, not changes to apply to the reference baseline. A facilitator may use them on separate approved demo branches, inspecting, testing, committing, pushing, and opening pull requests manually.
+
+The advanced fixture intentionally leaves the R header referring to `AE-3` while the proposed requirement and other headers refer to `AE-4`. Preserve that review defect in the fixture; passing Python tests should not conceal it. Ask participants to compare requirement identifiers and scientific wording across all artifacts. Do not promise that Copilot will find the mismatch; the human checklist must work without AI review.
+
+Do not apply both fixtures cumulatively without reviewing their overlapping expected-output changes. Keep separate clean demo branches and never overwrite participant work.
 
 ## Timing guidance
 
-Cloud-agent work is asynchronous. Start the agent task early, then teach prompt quality, evidence, and review while the session runs. Never wait silently for the agent.
+Drive the advanced lab through a visible local plan, human approval, bounded implementation, local diff/security review and tests, then human publication and review. Keep a prepared demonstration available rather than waiting on a blocked session.
 
 Each workshop has 70 minutes of planned content inside a 90-minute room block. End the scripted content at 70 minutes. The remaining room time is recovery and transition buffer, not additional material.
 
+Suggested advanced allocation: 10 minutes for prerequisites and task framing, 15 for planning, 20 for implementation and local evidence, 15 for human publication and review, and 10 for scientific limitations and debrief.
+
 ## Safety language
 
-Use synthetic data only. GitHub and Copilot support the workflow but do not replace organizational requirements, validation, security controls, scientific judgment, or formal approvals.
+Use synthetic data only; no secrets or real patient/customer data in prompts, files, logs, recordings, or output. GitHub and Copilot do not replace organizational requirements, validation, security controls, scientific judgment, or formal approvals. Humans own branches, commits, pushes, pull requests, and merge decisions. Review every proposed tool/terminal action; do not enable unrestricted automatic approval.
+
+Leave workshop pull requests unmerged unless explicitly authorized and all required human review, security, and test gates are satisfied. Record unavailable checks and unresolved scientific questions rather than bypassing gates.
