@@ -27,7 +27,7 @@ For workshop exercises, leave the pull request unmerged unless the facilitator e
 Use a facilitator-provided unique pair identifier to avoid collisions. GitHub handles are needed only to provision approved work-repository access, not to complete the exercise:
 
 ```text
-foundations/<pair-id>-first-change
+foundations/<pair-id>-review-note
 copilot/<pair-id>-ae-summary
 ```
 

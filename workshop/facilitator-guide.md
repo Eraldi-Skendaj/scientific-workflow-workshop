@@ -48,9 +48,32 @@ Do not apply both fixtures cumulatively without reviewing their overlapping expe
 
 Drive the advanced lab through a visible local plan, human approval, bounded implementation, local diff/security review and tests, then human publication and review. Keep a prepared demonstration available rather than waiting on a blocked session.
 
-Each workshop has 70 minutes of planned content inside a 90-minute room block. End the scripted content at 70 minutes. The remaining room time is recovery and transition buffer, not additional material.
+Each workshop uses a 90-minute room block, including standards, setup, labs, discussion, and closing feedback. Setup must be provisioned before delivery; use the pairing/observer route instead of consuming lab time on installation or permission changes. Adjust live discussion rather than bypassing a required review step.
 
-Suggested advanced allocation: 10 minutes for prerequisites and task framing, 15 for planning, 20 for implementation and local evidence, 15 for human publication and review, and 10 for scientific limitations and debrief.
+| Advanced segment | Minutes |
+|---|---:|
+| Welcome, outcomes, standards, setup/access | 15 |
+| Workflow catch-up and synthetic scenario | 11 |
+| Bounded issue and attaching repository context | 12 |
+| Agent plan, human checkpoint, implementation and local evidence | 20 |
+| Human commit, push, and pull request | 10 |
+| Copilot review, triage, and local iteration | 16 |
+| Human decision, recap, questions and feedback | 6 |
+| Total | 90 |
+
+| Foundations segment | Minutes |
+|---|---:|
+| Welcome and outcomes | 5 |
+| Source-control concepts and tools | 16 |
+| Standards and participant access | 10 |
+| Repository orientation and commit demonstration | 18 |
+| Focused browser edit lab | 12 |
+| Branch and pull-request concepts | 12 |
+| Partner review lab | 8 |
+| Scientific review, recap and feedback | 9 |
+| Total | 90 |
+
+The reference validation workflow runs Python tests only. Its action revisions are SHA-pinned and its token is read-only, but it is a teaching example, not an organization-approved deployment pipeline or a complete security-scanning configuration. Obtain the required approval for actions, runners, dependencies, and pipelines before using it in an internal copy. Required static-analysis, secret-scanning, dependency, peer-review, and formal-validation gates are additional controls; a green Python check does not satisfy them.
 
 ## Safety language
 

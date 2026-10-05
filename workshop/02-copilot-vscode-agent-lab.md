@@ -46,7 +46,7 @@ Work in pairs, with one driver and one reviewer. Create one issue, one local bra
 ## Part 2: Plan in VS Code Agent mode
 
 1. Open Copilot Chat in VS Code, select **Agent**, and select an organization-approved model. Use the local workspace session, not a remote/cloud task.
-2. Attach or reference `AGENTS.md`, `.github/copilot-instructions.md`, `workshop/vscode-agent-task.md`, and the relevant files listed in the task. Paste only the synthetic issue details if issue access is unavailable; additional integrations are not required.
+2. In Chat, use **Add Context > Files** (or drag files from Explorer into Chat) to attach `AGENTS.md`, `.github/copilot-instructions.md`, and `workshop/vscode-agent-task.md` from the open working copy. These are repository files, not separate downloads. Ask the agent to read the seven evidence files listed in the task: the requirement, terminology, three implementations, expected output, and tests. Attach those files individually too if the agent cannot find them. Paste only the synthetic issue details if issue access is unavailable; additional integrations are not required.
 3. Ask for a plan before edits:
 
    > Read the attached instructions and bounded change request. Do not edit yet. Identify the requirement, affected files, exact terminology, output contract, tests, and unresolved scientific questions. Propose the smallest plan. Use only this local workspace and approved tools. Do not create branches, commit, push, open a pull request, merge, install dependencies, or change permissions. Wait for my approval before implementation.

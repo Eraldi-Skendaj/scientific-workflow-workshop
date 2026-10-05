@@ -69,6 +69,7 @@ Use `python3` on systems where that is the Python 3 command, or `py -3` on Windo
 
 - [Foundations browser lab](workshop/01-foundations-browser-lab.md)
 - [VS Code Copilot Agent mode and pull-request review lab](workshop/02-copilot-vscode-agent-lab.md)
+- [Task and exact repository context to attach](workshop/vscode-agent-task.md)
 - [Review checklist](workshop/review-checklist.md)
 - [Facilitator guide](workshop/facilitator-guide.md)
 
